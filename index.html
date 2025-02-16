@@ -18,11 +18,11 @@
         .barra-color {
             background-color: #46456e;
             width: 100%;
-            height: 200px;
+            height: 200px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 20px; 
             box-sizing: border-box;
             position: fixed;
             top: 0;
@@ -31,19 +31,59 @@
         }
 
         .logo {
-            width: 200px;
+            width: 120px;
+            margin-left: 20px; 
         }
 
         .user {
-            width: 100px;
+            width: 80px;
+            margin-right: 20px; 
+        }
+
+        .barra-busqueda {
+            display: flex;
+            align-items: center;
+            flex-grow: 1; 
+            margin: 0 20px; 
+            position: relative; 
+        }
+
+        .input-busqueda {
+            width: 100%; 
+            padding: 10px 40px 10px 10px; 
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .input-busqueda:focus {
+            outline: none;
+            border-color: #4c5a89;
+        }
+
+        .boton-lupa {
+            position: absolute;
+            right: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer; 
+            padding: 0;
+        }
+
+        .boton-lupa img {
+            width: 20px; 
+            height: 20px;
         }
 
         .menu-superior {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Espacio entre los elementos */
+            gap: 150px; 
             position: absolute;
-            top: 90px;
+            top: 150px; 
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -51,79 +91,69 @@
 
         .menu-superior h2 {
             color: #ffffff;
-            font-size: 20px;
+            font-size: 18px;
             font-family: 'Helvetica', sans-serif;
             font-weight: bold;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
             margin: 0;
         }
 
-        .barra-busqueda {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 250px;
-            width: 100%;
-            z-index: 2;
-        }
+        
+        @media (max-width: 480px) {
+            .barra-color {
+                height: 180px;
+            }
 
-        .input-busqueda {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
+            .logo {
+                width: 100px;
+                margin-left: 10px; 
+            }
 
-        .boton-busqueda {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4c5a89;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .boton-busqueda:hover {
-            background-color: #7379a7;
-        }
-
-        @media (max-width: 768px) {
-            .menu-superior {
-                flex-direction: column;
-                gap: 10px;
-                top: 120px;
+            .user {
+                width: 60px;
+                margin-right: 10px;
             }
 
             .barra-busqueda {
-                margin-top: 300px;
+                margin: 0 10px;
             }
 
             .input-busqueda {
-                width: 80%;
+                padding: 10px 35px 10px 10px;
+            }
+
+            .boton-lupa img {
+                width: 18px; 
+                height: 18px;
+            }
+
+            .menu-superior {
+                top: 150px; 
+                gap: 70px; 
+            }
+
+            .menu-superior h2 {
+                font-size: 16px; 
             }
         }
     </style>
 </head>
 <body>
     <div class="barra-color">
-        <img class="logo" src="TEC-removebg-preview.PNG" alt="Logo">
-        <img class="user" src="pfp.PNG" alt="Usuario">
+        <img class="logo" src="/web/TEC-removebg-preview.PNG" alt="Logo">
+        <div class="barra-busqueda">
+            <input type="text" placeholder="Buscar productos..." class="input-busqueda">
+            <button class="boton-lupa">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234c5a89'><path d='M10 2a8 8 0 105.293 14.707l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z'/></svg>" alt="Buscar">
+            </button>
+        </div>
+        <img class="user" src="/web/pfp.PNG" alt="Usuario">
     </div>
 
     <div class="menu-superior">
         <h2>Categoria</h2>
         <h2>Vender</h2>
-        <h2>Lo más vendido</h2>
-    </div>
-
-    <div class="barra-busqueda">
-        <form action="#">
-            <input type="text" placeholder="Buscar..." class="input-busqueda">
-            <button type="submit" class="boton-busqueda">Buscar</button>
-        </form>
+        <h2>Caliente</h2>
     </div>
 </body>
 </html>
