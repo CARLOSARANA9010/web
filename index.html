@@ -7,94 +7,67 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
             background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-       
-        p {
-            position: absolute;
-            top: 90px;
-            right: 190px;
-            color: #ffffff; 
-            font-size: 20px; 
-            font-family: 'Helvetica', sans-serif; 
-            font-weight: bold; 
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); 
-            transition: all 0.3s ease;
-        }
-        
 
-        .imagen1 {
-            position: absolute;
-            top: 0px;
-            left: 100px;
-        }
-        .imagen2 {
-            position: absolute;
-            top: 70px;
-            right: 80px;
-            width: 100px;
-        }
         .barra-color {
-            background-color: #46456e; 
-            height: 200px;  
-            width: 100%;  
-            position: fixed; 
+            background-color: #46456e;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: fixed;
             top: 0;
             left: 0;
+            z-index: 1;
         }
-        
-        
 
-        .categoria {
+        .logo {
+            width: 200px;
+        }
+
+        .user {
+            width: 100px;
+        }
+
+        .menu-superior {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espacio entre los elementos */
             position: absolute;
             top: 90px;
-            left: 320px;
-            color: #ffffff; 
-            font-size: 20px; 
-            font-family: 'Helvetica', sans-serif; 
-            font-weight: bold; 
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); 
-            transition: all 0.3s ease;
-            
-        }
-
-        .vender {
-            position: absolute;
             left: 50%;
-            top: 90px;
-            color: #ffffff; 
-            font-size: 20px; 
-            font-family: 'Helvetica', sans-serif; 
-            font-weight: bold; 
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); 
-            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            z-index: 2;
         }
 
-        .LoMasVendido {
-            position: absolute;
-            top: 90px;
-            right: 320px;
-            color: #ffffff; 
-            font-size: 20px; 
-            font-family: 'Helvetica', sans-serif; 
-            font-weight: bold; 
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); 
-            transition: all 0.3s ease;
+        .menu-superior h2 {
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Helvetica', sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+            margin: 0;
         }
+
         .barra-busqueda {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            top: 250px; 
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 250px;
             width: 100%;
+            z-index: 2;
         }
-        
+
         .input-busqueda {
-            
             width: 300px;
             padding: 10px;
             font-size: 16px;
@@ -102,7 +75,7 @@
             border-radius: 5px;
             margin-right: 10px;
         }
-        
+
         .boton-busqueda {
             padding: 10px 20px;
             font-size: 16px;
@@ -112,39 +85,45 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         .boton-busqueda:hover {
             background-color: #7379a7;
         }
-        
-       
-        body {
-            font-family: Arial, sans-serif;
-            margin-top: 100px;
+
+        @media (max-width: 768px) {
+            .menu-superior {
+                flex-direction: column;
+                gap: 10px;
+                top: 120px;
+            }
+
+            .barra-busqueda {
+                margin-top: 300px;
+            }
+
+            .input-busqueda {
+                width: 80%;
+            }
         }
-       
     </style>
 </head>
 <body>
-    
-    <div class="barra-color"></div>
-    <p>USER</p>
-    <img class="imagen1" src="TEC-removebg-preview.PNG" alt="Ejemplo" width="200"> 
-    <img class="imagen2" src="pfp.PNG" alt="Ejemplo" width="200"> 
+    <div class="barra-color">
+        <img class="logo" src="TEC-removebg-preview.PNG" alt="Logo">
+        <img class="user" src="pfp.PNG" alt="Usuario">
+    </div>
+
+    <div class="menu-superior">
+        <h2>Categoria</h2>
+        <h2>Vender</h2>
+        <h2>Lo más vendido</h2>
+    </div>
+
     <div class="barra-busqueda">
         <form action="#">
             <input type="text" placeholder="Buscar..." class="input-busqueda">
             <button type="submit" class="boton-busqueda">Buscar</button>
         </form>
-    <h2 class="categoria"> Categoria </h2>
-    <h2 class="vender"> Vender </h2>
-    <h2 class="LoMasVendido"> Lo más vendido </h2>
-    
-    
-
-    
-    
-    
-    
+    </div>
 </body>
 </html>
